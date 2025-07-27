@@ -10,11 +10,14 @@ handled automatically.
 Making Cygwin Portable
 ----------------------
 A good portable setup will—in keeping with PortableApps.com standards—prevent
-leaving artifacts behind after removal.  The [uninstall FAQ section](https://cygwin.com/faq.html#faq.setup.uninstall-all)
-raises several considerations for portability.
+leaving artifacts behind after removal.
 
-### Important Notes:
+### Differences when Running as Portable:
 * The HOME directory is set to `/home`, as the user name might be changing from one system to the next.
+
+### Portability Considerations
+The [uninstall FAQ section](https://cygwin.com/faq.html#faq.setup.uninstall-all)
+raises several considerations that must be taken into account for portability.
 
 | Consideration | Measures Taken (if any) |
 | ------------- | ----------------------- |
