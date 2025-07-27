@@ -13,11 +13,11 @@ A good portable setup will—in keeping with PortableApps.com standards—preven
 leaving artifacts behind after removal.  The [uninstall FAQ section](https://cygwin.com/faq.html#faq.setup.uninstall-all)
 raises several considerations for portability.
 
-Important Notes:
+### Important Notes:
 * The HOME directory is set to `/home`, as the user name might be changing from one system to the next.
 
 | Consideration | Measures Taken (if any) |
-| ============= | ======================= |
+| ------------- | ----------------------- |
 | Running Cygwin Services | Any Cygwin services that have been installed by the user must also be uninstalled by the user |
 | Running an X11 Server | If an X11 server has been started by the user, it (and any other Cygwin programs must also be ended by the user |
 | Configuring Windows to Use LSA Authentication | The Windows registry key changed by `cyglsa-config` will be automatically restored to its prior value, but Windows will need to be rebooted for this change to take effect, and the user will _not_ be prompted to reboot. |
