@@ -22,9 +22,7 @@ IF "%CYGWIN_LOCAL_ARCHITECTURE%" == "AMD64" (
 
 :: Setup path variables
 SET CYGWIN_PORTABLE_ROOT=%PortableApps.comRoot%\Cygwin
-SET CYGWIN_PORTABLE_BAT=%CYGWIN_PORTABLE_ROOT%\Cygwin-Portable.bat
 SET CYGWIN_PORTABLE_ARCH_ROOT=%CYGWIN_PORTABLE_ROOT%\arch-%CYGWIN_LOCAL_ARCHITECTURE%
-SET CYGWIN_ARCH_BAT=%CYGWIN_PORTABLE_ARCH_ROOT%\Cygwin.bat
 
 
 :: Run Cygwin Setup
@@ -32,4 +30,7 @@ SET CYGWIN_ARCH_BAT=%CYGWIN_PORTABLE_ARCH_ROOT%\Cygwin.bat
 
 
 :: Copy over the bootstrap batch file used by portable consoles or terminals to run Cygwin portably
-copy /Y "%CYGWIN_PORTABLE_SETUP_ROOT%\Cygwin-Portable.bat" "%CYGWIN_PORTABLE_BAT%"
+copy /Y "%CYGWIN_PORTABLE_SETUP_ROOT%\Cygwin-Portable.bat" "%CYGWIN_PORTABLE_ROOT%\"
+
+:: Copy over the latest default Cygwin.bat file
+copy /Y "%CYGWIN_PORTABLE_ARCH_ROOT%\etc\defaults\Cygwin.bat" "%CYGWIN_PORTABLE_ARCH_ROOT%\"
