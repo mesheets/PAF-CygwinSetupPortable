@@ -25,6 +25,12 @@ The installation steps are the same for each:
 4. From the pop-up context menu, select “Install a New App [paf.exe]”
 5. Select one of the `\*.paf.exe` file releases downloaded in the earlier step
 
+If wishing to make specific fonts available portably as well, those may be copied to the
+`.\PortableApps\PortableApps.com\Data\Fonts` directory that can be found in a standard
+PortableApps.com platform setup (c.f. [portable font support documentation](https://portableapps.com/support/platform#fonts)).
+An example would be [Cascadia Code / Cascadia Mono](https://github.com/Microsoft/Cascadia-Code),
+which is a default font in [Windows Terminal](https://github.com/Microsoft/Terminal).
+
 ### Usage
 1. From the PortableApps.com menu, run “Cygwin Setup & Updater” to complete the initial Cygwin portable installation
    * A `Cygwin` folder will be created within the root directory of the PortableApps.com installation, alongside `Start.exe` file and the `Documents` and `PortableApps` folders that are created by a PortableApps.com installation.
