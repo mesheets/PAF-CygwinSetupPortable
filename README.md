@@ -33,15 +33,20 @@ which is a default font in [Windows Terminal](https://github.com/Microsoft/Termi
 
 ### Usage
 1. From the PortableApps.com menu, run “Cygwin Setup & Updater” to complete the initial Cygwin portable installation
+   * Access the Cygwin Setup & Update for this portable installation **ONLY** through this PortableApps.com wrapper.
    * A `Cygwin` folder will be created within the root directory of the PortableApps.com installation, alongside `Start.exe` file and the `Documents` and `PortableApps` folders that are created by a PortableApps.com installation.
 2. Access this portable installation **ONLY** through the corresponding Cygwin portable console or terminal to prevent unintended modifications to the local system environment
+3. If multiple console or terminal sessions are needed, open a new tab within the Cygwin portable console app
+4. To ensure that the registry of the host system can be properly restored to its original state, “Cygwin Setup & Updater” and “Cygwin Console” canNOT be running at the same time.
 
 ### Differences and Requirements when Running as Portable:
 * Portability and preservation of the host environment are only maintained if using the corresponding portable console or terminal.
   + [Cygwin Console Portable packaged in the PortableApps.com format](https://github.com/mesheets/PAF-CygwinConsolePortable)
   + A similar portable package could likely be created based on Windows Terminal, but such a package has not yet been created.
 * The `/etc/passwd` file under the portable installation is maintained so that the Cygwin user name (and home path) remain the same regardless of the changing hosts and their respective system environments.
-* Do _not_ use both a local install of Cygwin and a portable Cygwin at the same time; doing so has the potential to break the configuration of the local install.
+* To avoid breaking or corrupting the local system environment:
+  + Do _not_ run both Cygwin setup and a Cgywin console or terminal session at the same time.
+  + Do _not_ use both a local install of Cygwin and a portable Cygwin at the same time.
 
 ### Portability Considerations
 The [Cygwin uninstall FAQ section](https://cygwin.com/faq.html#faq.setup.uninstall-all)

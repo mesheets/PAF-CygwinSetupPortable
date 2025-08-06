@@ -15,10 +15,6 @@ IF NOT "%PROCESSOR_ARCHITEW6432%" == "" (
   SET CYGWIN_LOCAL_ARCHITECTURE=%PROCESSOR_ARCHITECTURE%
 )
 
-IF "%CYGWIN_LOCAL_ARCHITECTURE%" == "AMD64" (
-  SET CYGWIN_LOCAL_ARCHITECTURE=x86_64
-)
-
 
 :: Setup path variables
 SET CYGWIN_PORTABLE_ROOT=%PortableApps.comRoot%\Cygwin
@@ -26,7 +22,7 @@ SET CYGWIN_PORTABLE_ARCH_ROOT=%CYGWIN_PORTABLE_ROOT%\arch-%CYGWIN_LOCAL_ARCHITEC
 
 
 :: Run Cygwin Setup
-"%CYGWIN_PORTABLE_SETUP_ROOT%\Setup-%CYGWIN_LOCAL_ARCHITECTURE%"  --no-admin --no-shortcuts --no-write-registry --no-replaceonreboot --package-manager --root "%PortableApps.comRoot%\Cygwin\arch-%CYGWIN_LOCAL_ARCHITECTURE%"  --local-package-dir "%PortableApps.comRoot%\Cygwin\packages" --wait 
+"%CYGWIN_PORTABLE_SETUP_ROOT%\arch-%CYGWIN_LOCAL_ARCHITECTURE%\CygwinSetup.exe"  --no-admin --no-shortcuts --no-write-registry --no-replaceonreboot --package-manager --root "%PortableApps.comRoot%\Cygwin\arch-%CYGWIN_LOCAL_ARCHITECTURE%"  --local-package-dir "%PortableApps.comRoot%\Cygwin\packages" --wait 
 
 
 :: Copy over the bootstrap batch file used by portable consoles or terminals to run Cygwin portably
