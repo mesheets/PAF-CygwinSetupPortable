@@ -42,10 +42,11 @@ which is a default font in [Windows Terminal](https://github.com/Microsoft/Termi
 ### Differences and Requirements when Running as Portable:
 * Portability and preservation of the host environment are only maintained if using the corresponding portable console or terminal.
   + [Cygwin Console Portable packaged in the PortableApps.com format](https://github.com/mesheets/PAF-CygwinConsolePortable)
-  + A similar portable package could likely be created based on Windows Terminal, but such a package has not yet been created.
+  + A similar portable package could likely be created based on Windows Terminal, but such a package does not yet exist.
 * The `/etc/passwd` file under the portable installation is maintained so that the Cygwin user name (and home path) remain the same regardless of the changing hosts and their respective system environments.
 * To avoid breaking or corrupting the local system environment:
   + Do _not_ run both Cygwin setup and a Cgywin console or terminal session at the same time.
+    - The PortableApps.com Cgywin Setup and Console packages have been configured to enforce this on the portable side, but if executing directly outside of the portable wrappers, no protections are in place.
   + Do _not_ use both a local install of Cygwin and a portable Cygwin at the same time.
 
 ### Portability Considerations
