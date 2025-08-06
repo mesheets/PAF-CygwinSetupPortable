@@ -65,5 +65,9 @@ IF "%CYGWIN_USER_MAPPING_ENTRY%" == "" (
 
 
 :: Run the commands from the core Cygwin batch file
-cd /d "%CYGWIN_PORTABLE_ARCH_ROOT%"
-Call Cygwin.bat
+IF EXIST "%CYGWIN_PORTABLE_ARCH_ROOT%\Cygwin.bat" (
+  cd /d "%CYGWIN_PORTABLE_ARCH_ROOT%"
+  Call Cygwin.bat
+) ELSE (
+  start /wait cmd /c "echo No portable Cygwin installation found for architecture %CYGWIN_LOCAL_ARCHITECTURE%. && echo Please try running the portable Cygwin setup. && echo. && pause"
+)

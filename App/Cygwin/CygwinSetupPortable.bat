@@ -22,7 +22,11 @@ SET CYGWIN_PORTABLE_ARCH_ROOT=%CYGWIN_PORTABLE_ROOT%\arch-%CYGWIN_LOCAL_ARCHITEC
 
 
 :: Run Cygwin Setup
-"%CYGWIN_PORTABLE_SETUP_ROOT%\arch-%CYGWIN_LOCAL_ARCHITECTURE%\CygwinSetup.exe"  --no-admin --no-shortcuts --no-write-registry --no-replaceonreboot --package-manager --root "%PortableApps.comRoot%\Cygwin\arch-%CYGWIN_LOCAL_ARCHITECTURE%"  --local-package-dir "%PortableApps.comRoot%\Cygwin\packages" --wait 
+IF EXIST "%CYGWIN_PORTABLE_SETUP_ROOT%\arch-%CYGWIN_LOCAL_ARCHITECTURE%\CygwinSetup.exe" (
+  "%CYGWIN_PORTABLE_SETUP_ROOT%\arch-%CYGWIN_LOCAL_ARCHITECTURE%\CygwinSetup.exe"  --no-admin --no-shortcuts --no-write-registry --no-replaceonreboot --package-manager --root "%PortableApps.comRoot%\Cygwin\arch-%CYGWIN_LOCAL_ARCHITECTURE%"  --local-package-dir "%PortableApps.comRoot%\Cygwin\packages" --wait
+) ELSE (
+  start /wait cmd /c "echo No Cygwin setup found for architecture %CYGWIN_LOCAL_ARCHITECTURE%. && echo. && pause"
+)
 
 
 :: Copy over the bootstrap batch file used by portable consoles or terminals to run Cygwin portably
